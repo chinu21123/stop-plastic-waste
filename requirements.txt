@@ -1,21 +1,5 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
+streamlit==1.21.0
+pandas==1.5.3
+numpy==1.24.3
+requests==2.31.0
 
-st.title("Stop Plastic Waste - Minimal Version")
-
-# Example data or dummy placeholder
-data = {
-    "Plastic Type": ["PET", "HDPE", "PVC"],
-    "Recycling Rate (%)": [29, 30, 25]
-}
-df = pd.DataFrame(data)
-
-st.write("Here is some example data about plastic types and recycling rates:")
-st.dataframe(df)
-
-# Add any simple interactivity that uses pandas or numpy only
-plastic_choice = st.selectbox("Choose plastic type:", df["Plastic Type"])
-recycling_rate = df[df["Plastic Type"] == plastic_choice]["Recycling Rate (%)"].values[0]
-
-st.write(f"Recycling rate for {plastic_choice} is {recycling_rate}%")
